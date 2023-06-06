@@ -1,12 +1,13 @@
 import './Styles/style.css'
+import Icon from './Assets/Restaurant.png'
 
 const createPageContent = () =>{
     const pageContent = document.createElement('div')
     const navBar = document.createElement("div")
     navBar.classList.add("navBarDiv")
 
-    const leftNavOptions = ["Hours", "Location", "Menu"]
-    const rightNavOptions = ["About Us", "Dress Code", "Contact"]
+    const leftNavOptions = ["Home", "About", "Menu"]
+    const rightNavOptions = ["Location", "Hours", "Contact"]
     let leftNavUl = createUl(leftNavOptions)
     leftNavUl.classList.add("navBarOptions")
     let rightNavUl = createUl(rightNavOptions)
@@ -28,6 +29,11 @@ const createPageContent = () =>{
     navBar.appendChild(restaurantName)
     navBar.appendChild(rightNavDiv)
     pageContent.appendChild(navBar)
+
+    const restaurantImg = new Image();
+    restaurantImg.src = Icon
+    restaurantImg.classList.add("restaurantImg")
+    pageContent.appendChild(restaurantImg)
     return pageContent
 }
 

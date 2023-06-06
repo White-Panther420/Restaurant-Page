@@ -1,43 +1,61 @@
+@font-face {
+    font-family: cursiveFont;
+    src: url('../Assets/alsscrp.ttf');
+}
+
 body{
     display: flex;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 #content{
     display: flex;
-    width: 100vw;
+    min-width: 100vw;
     height: 100vh;
 }
 
 .navBarDiv{ 
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    width: 100vw;
+    min-width: 100vw;
     height: max(80px, 8%);
     background-color: black;
+    border-bottom: 6px solid rgb(200, 175, 31);
 }
 
 .navBarOptions{
     display: flex;
     flex-wrap: wrap;
+    list-style: none;
     color: white;
-    width: 25%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 75px;
     padding: 0;
-    font-size: 16px;
+    font-size: 2vh;
 }
 
-.navBarOptions li{
-    list-style: none;
+.navBarOptions li:hover{
+    color: rgb(200, 175, 31);
+}
+
+.navBarUlDiv{
 }
 
 .restaurantTitle{
     color: white;
-    font-size: 36px;
-    font-family: cursive;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    font-size: 6vh;
+    font-family: cursiveFont;
+    font-weight: 575;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
+.restaurantImg{
+    min-width: 100vw;
+    max-height: 75%;
+}
