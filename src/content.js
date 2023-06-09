@@ -1,6 +1,7 @@
 import './Styles/style.css'
 import Icon from './Assets/Restaurant.png'
-
+import Steak from './Assets/Steak.jpeg'
+import LocationMap from './Assets/Map.png'
 const createPageContent = () =>{
     const pageContent = document.createElement('div')
     //Nav bar stuff
@@ -34,7 +35,7 @@ const createPageContent = () =>{
     const aboutUsContentDiv = createAnElement("div", "aboutUsContentDiv")
     pageBodyContent.appendChild(aboutUsContentDiv)
     const aboutUsHeader = createAnElement('h2', "aboutUsHeader")
-    aboutUsHeader.textContent = "About Us"
+    aboutUsHeader.textContent = "A PERFECT DINING EXPERIENCE"
     aboutUsContentDiv.appendChild(aboutUsHeader)
 
     const aboutUsInfoDiv = createAnElement("div", "aboutUsInfoDiv")
@@ -46,38 +47,61 @@ const createPageContent = () =>{
     aboutUsInfoDiv.appendChild(aboutUsP1)
     aboutUsInfoDiv.appendChild(aboutUsP2)
 
-
-
-    const restaurantInfoDiv = createAnElement("div", "restaurantInfoDiv")
+    const imgAndInfoDiv = createAnElement("div", "imgAndInfoDiv")
+    const steakImg = new Image()
+    steakImg.src = Steak
+    steakImg.classList.add("steakImg")
+    // const restaurantInfoDiv = createAnElement("div", "restaurantInfoDiv")
+    // imgAndInfoDiv.appendChild(restaurantInfoDiv)
 
     const hoursInfoDiv = createAnElement("div", "hoursInfoDiv")
+    imgAndInfoDiv.appendChild(hoursInfoDiv)
     const hoursInfoHeader = createAnElement("h2", "hoursInfoHeader")
-    hoursInfoHeader.textContent = "Our Hours"
+    hoursInfoHeader.textContent = "Haddison Steakhouse Hours"
     hoursInfoDiv.appendChild(hoursInfoHeader)
+    // const seperatorDiv = createAnElement("div", "seperatorDiv")
+    // hoursInfoDiv.appendChild(seperatorDiv)
     const friHoursInfo = createAnElement("p", "HoursInfo")
     friHoursInfo.textContent = "Friday: 6pm - 12am:"
     const satHoursInfo = createAnElement("p", "HoursInfo")
     satHoursInfo.textContent = "Saturday: 6pm - 12am:"
     const sunHoursInfo = createAnElement("p", "HoursInfo")
     sunHoursInfo.textContent = "Sunday: 6pm - 10pm:"
-    restaurantInfoDiv.appendChild(hoursInfoDiv)
     hoursInfoDiv.appendChild(friHoursInfo)
     hoursInfoDiv.appendChild(satHoursInfo)
     hoursInfoDiv.appendChild(sunHoursInfo)
 
+    imgAndInfoDiv.appendChild(steakImg)
+
+    const actionLocationContactDiv = createAnElement("div", "actionLocationContactDiv")
+    const actionStmtDiv = createAnElement("div", "actionStmtDiv")
+    actionLocationContactDiv.appendChild(actionStmtDiv)
+    
     const locationAndContactDiv = createAnElement("div", "locationAndContactDiv")
     const locationInfoDiv = createAnElement("div", "locationInfoDiv")
     locationAndContactDiv.appendChild(locationInfoDiv)
+    actionLocationContactDiv.appendChild(locationAndContactDiv)
 
+    const locationHeaderDiv = createAnElement("div", "locationHeaderDiv")
     const locationHeader = createAnElement("h2", "locationHeader")
     locationHeader.textContent = "Our Location"
+    locationHeaderDiv.appendChild(locationHeader)
+    const locationMapDiv = createAnElement("div", "mapDiv")
+    const locationMap = new Image()
+    locationMap.classList.add("map")
+    locationMap.src = LocationMap
+    locationMapDiv.appendChild(locationMap)
+    const locationPDiv = createAnElement("div", "locationPDiv")
     const locationP1 = createAnElement("p", "LocationP")
     locationP1.textContent = "5101 N 44th St."
     const locationP2 = createAnElement("p", "LocationP")
     locationP2.textContent = "Phoenix, AZ 85018"
-    locationInfoDiv.appendChild(locationHeader)
-    locationInfoDiv.appendChild(locationP1)
-    locationInfoDiv.appendChild(locationP2)
+    locationPDiv.appendChild(locationP1)
+    locationPDiv.appendChild(locationP2)
+
+    locationInfoDiv.appendChild(locationHeaderDiv)
+    locationInfoDiv.appendChild(locationMapDiv)
+    locationInfoDiv.appendChild(locationPDiv)
 
     const contactInfoDiv = createAnElement("div", "contactInfoDiv")
     locationAndContactDiv.appendChild(contactInfoDiv)
@@ -89,9 +113,9 @@ const createPageContent = () =>{
     contactEmail.textContent = "Or email us at Haddison.Stk@gmail.com"
     contactInfoDiv.appendChild(contactInfoHeader)
     contactInfoDiv.appendChild(contactPhoneNumber)
-    contactInfoDiv.appendChild(contactEmail)
-
-    restaurantInfoDiv.appendChild(locationAndContactDiv)
+    contactInfoDiv.appendChild(contactEmail)    
+    
+    imgAndInfoDiv.appendChild(actionLocationContactDiv)
     
     
     
@@ -105,10 +129,7 @@ const createPageContent = () =>{
     
     
     
-    
-    
-    
-    pageBodyContent.appendChild(restaurantInfoDiv)
+    pageBodyContent.appendChild(imgAndInfoDiv)
     pageContent.appendChild(pageBodyContent)
     return pageContent
 }
