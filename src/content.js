@@ -2,15 +2,18 @@ import './Styles/style.css'
 import Icon from './Assets/Restaurant.png'
 import Steak from './Assets/Steak.jpeg'
 import LocationMap from './Assets/Map.png'
+import FaceBookIcon from "./Assets/Facebook.png"
+import InstagramIcon from "./Assets/Instagram.png"
+import YelpIcon from "./Assets/Yelp.png"
 const createPageContent = () =>{
-    const pageContent = document.createElement('div')
+    const pageContent = createAnElement("div", "pageContent")
     //Nav bar stuff
     const navBar = createAnElement("div", "navBarDiv")
 
     const leftNavOptions = ["Home", "About", "Menu"]
     const rightNavOptions = ["Location", "Hours", "Contact"]
-    let leftNavUl = createUl(leftNavOptions, "navBarOptions")
-    let rightNavUl = createUl(rightNavOptions, "navBarOptions")
+    let leftNavUl = createButtons(leftNavOptions, "navBarOptions")
+    let rightNavUl = createButtons(rightNavOptions, "navBarOptions")
     
     const leftNavDiv = createAnElement("div", "navBarUlDiv")
     leftNavDiv.appendChild(leftNavUl)
@@ -27,9 +30,7 @@ const createPageContent = () =>{
 
     //Stuff below nav bar
     const pageBodyContent = createAnElement("div", "pageBodyContent")
-    const restaurantImg = new Image();
-    restaurantImg.src = Icon
-    restaurantImg.classList.add("restaurantImg")
+    const restaurantImg = createAnImg(Icon, "restaurantImg")
     pageBodyContent.appendChild(restaurantImg)
 
     const aboutUsContentDiv = createAnElement("div", "aboutUsContentDiv")
@@ -48,19 +49,14 @@ const createPageContent = () =>{
     aboutUsInfoDiv.appendChild(aboutUsP2)
 
     const imgAndInfoDiv = createAnElement("div", "imgAndInfoDiv")
-    const steakImg = new Image()
-    steakImg.src = Steak
-    steakImg.classList.add("steakImg")
-    // const restaurantInfoDiv = createAnElement("div", "restaurantInfoDiv")
-    // imgAndInfoDiv.appendChild(restaurantInfoDiv)
+    const steakImg = createAnImg(Steak, "steakImg")
 
     const hoursInfoDiv = createAnElement("div", "hoursInfoDiv")
     imgAndInfoDiv.appendChild(hoursInfoDiv)
     const hoursInfoHeader = createAnElement("h2", "hoursInfoHeader")
     hoursInfoHeader.textContent = "Haddison Steakhouse Hours"
     hoursInfoDiv.appendChild(hoursInfoHeader)
-    // const seperatorDiv = createAnElement("div", "seperatorDiv")
-    // hoursInfoDiv.appendChild(seperatorDiv)
+
     const friHoursInfo = createAnElement("p", "HoursInfo")
     friHoursInfo.textContent = "Friday: 6pm - 12am:"
     const satHoursInfo = createAnElement("p", "HoursInfo")
@@ -76,7 +72,10 @@ const createPageContent = () =>{
     const actionLocationContactDiv = createAnElement("div", "actionLocationContactDiv")
     const actionStmtDiv = createAnElement("div", "actionStmtDiv")
     actionLocationContactDiv.appendChild(actionStmtDiv)
-    
+    const actionStmtP = createAnElement("h2", "actionStmtP")
+    actionStmtP.textContent = "Savor perfection at Haddison Steakhouse - reserve your table today!"
+    actionStmtDiv.appendChild(actionStmtP)
+
     const locationAndContactDiv = createAnElement("div", "locationAndContactDiv")
     const locationInfoDiv = createAnElement("div", "locationInfoDiv")
     locationAndContactDiv.appendChild(locationInfoDiv)
@@ -87,9 +86,7 @@ const createPageContent = () =>{
     locationHeader.textContent = "Our Location"
     locationHeaderDiv.appendChild(locationHeader)
     const locationMapDiv = createAnElement("div", "mapDiv")
-    const locationMap = new Image()
-    locationMap.classList.add("map")
-    locationMap.src = LocationMap
+    const locationMap = createAnImg(LocationMap, "map")
     locationMapDiv.appendChild(locationMap)
     const locationPDiv = createAnElement("div", "locationPDiv")
     const locationP1 = createAnElement("p", "LocationP")
@@ -111,38 +108,41 @@ const createPageContent = () =>{
     contactPhoneNumber.textContent = "Call 555-555-5555 to make a reservation"
     const contactEmail = createAnElement("p", "contactInfo")
     contactEmail.textContent = "Or email us at Haddison.Stk@gmail.com"
+
+    const socialIconsDiv = createAnElement("div", "socialIconsDiv")
+    const faceBookIcon = createAnImg(FaceBookIcon, "socialIcon")
+    const instagramIcon = createAnImg(InstagramIcon, "socialIcon")
+    const yelpIcon = createAnImg(YelpIcon, "socialIcon")
+    socialIconsDiv.appendChild(faceBookIcon)
+    socialIconsDiv.appendChild(instagramIcon)
+    socialIconsDiv.appendChild(yelpIcon)
+
     contactInfoDiv.appendChild(contactInfoHeader)
     contactInfoDiv.appendChild(contactPhoneNumber)
     contactInfoDiv.appendChild(contactEmail)    
-    
-    imgAndInfoDiv.appendChild(actionLocationContactDiv)
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    contactInfoDiv.appendChild(socialIconsDiv)
+        
+    const footer = createAnElement("footer", "footer")
+    const footerP = createAnElement("p", "footerP")
+    footerP.textContent = "Copyright @ 2023 The Odin Project"
+    footer.appendChild(footerP)
     
     pageBodyContent.appendChild(imgAndInfoDiv)
+    pageBodyContent.appendChild(actionLocationContactDiv)
+    pageBodyContent.appendChild(footer)
+
     pageContent.appendChild(pageBodyContent)
     return pageContent
 }
 
-const createUl = (listItems, className) =>{
-    let ulList = document.createElement("ul")
-    ulList.classList.add(className)
-    for(let i=0; i<listItems.length; i++){
-        let liItem = document.createElement("li")
-        liItem.textContent = listItems[i]
-        ulList.appendChild(liItem)
+const createButtons = (buttonTextArray, className) =>{
+    const buttonsDiv = createAnElement("div", "buttonsDiv")
+    for(let i=0; i<buttonTextArray.length; i++){
+        let button = createAnElement("button", "navBtn")
+        button.textContent = buttonTextArray[i]
+        buttonsDiv.appendChild(button)
     }
-    return ulList
+    return buttonsDiv
 }
 
 const createAnElement = (elementName, className) =>{
@@ -151,4 +151,10 @@ const createAnElement = (elementName, className) =>{
     return element
 }
 
+const createAnImg = (importedImage, className) =>{
+    const myImg = new Image()
+    myImg.src = importedImage
+    myImg.classList.add(className)
+    return myImg
+}
 export default createPageContent
