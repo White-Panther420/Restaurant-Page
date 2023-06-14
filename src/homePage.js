@@ -5,29 +5,7 @@ import LocationMap from './Assets/Map.png'
 import FaceBookIcon from "./Assets/Facebook.png"
 import InstagramIcon from "./Assets/Instagram.png"
 import YelpIcon from "./Assets/Yelp.png"
-const createPageContent = () =>{
-    const pageContent = createAnElement("div", "pageContent")
-    //Nav bar stuff
-    const navBar = createAnElement("div", "navBarDiv")
-
-    const leftNavOptions = ["Home", "About", "Menu"]
-    const rightNavOptions = ["Location", "Hours", "Contact"]
-    let leftNavUl = createButtons(leftNavOptions, "navBarOptions")
-    let rightNavUl = createButtons(rightNavOptions, "navBarOptions")
-    
-    const leftNavDiv = createAnElement("div", "navBarUlDiv")
-    leftNavDiv.appendChild(leftNavUl)
-    const rightNavDiv = createAnElement("div", "navBarUlDiv")
-    rightNavDiv.appendChild(rightNavUl)
-
-    const restaurantName = createAnElement("div", "restaurantTitle")
-    restaurantName.textContent = 'Haddison Steakhouse'
-
-    navBar.appendChild(leftNavDiv)
-    navBar.appendChild(restaurantName)
-    navBar.appendChild(rightNavDiv)
-    pageContent.appendChild(navBar)
-
+const loadHomePage = () =>{
     //Stuff below nav bar
     const pageBodyContent = createAnElement("div", "pageBodyContent")
     const restaurantImg = createAnImg(Icon, "restaurantImg")
@@ -131,8 +109,8 @@ const createPageContent = () =>{
     pageBodyContent.appendChild(actionLocationContactDiv)
     pageBodyContent.appendChild(footer)
 
-    pageContent.appendChild(pageBodyContent)
-    return pageContent
+    //pageBodyContent.appendChild(pageBodyContent)
+    return pageBodyContent
 }
 
 const createButtons = (buttonTextArray, className) =>{
@@ -157,4 +135,8 @@ const createAnImg = (importedImage, className) =>{
     myImg.classList.add(className)
     return myImg
 }
-export default createPageContent
+export{
+    loadHomePage,
+    createAnElement,
+    createButtons
+}

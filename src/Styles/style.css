@@ -82,7 +82,7 @@ h2{
 
 .restaurantTitle{
     color: white;
-    font-size: 3.5rem;
+    font-size: max(3.4rem, 3.5rem);
     font-family: cursiveFont;
     font-weight: 575;
     margin-top: auto;
@@ -176,14 +176,16 @@ h2{
 .actionLocationContactDiv{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     min-width: 100vw;
     min-height: 40vh;
-    background-color: rgb(128, 124, 124);
+    background-color: rgb(88, 84, 84);
+    border-top: 6px solid rgb(147, 141, 141);
 }
 
 .actionStmtDiv{
-    background-color: rgb(130, 45, 45);    
+    background-color: rgb(88, 84, 84);   
     width: 100vw;
     padding: 0;
 }
@@ -192,13 +194,17 @@ h2{
     color: rgb(247, 242, 242);
     font-size: 30px;
     font-weight: 550;
-    margin: 15px auto;
+    border-bottom: 1px solid gold;
+    width: 1000px;
+    margin: 10px auto;
+    margin-top: 20px;
 }
 
 .locationAndContactDiv{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     height: 80%;
+    margin-top: 15px;
 }
 
 .locationInfoDiv{
@@ -206,7 +212,8 @@ h2{
     flex-direction: column;
     max-height: 50%;
     max-width: 40%;
-    color: white
+    margin-left: -90px;
+    color: white;
 }
 
 .locationHeader{
@@ -216,12 +223,20 @@ h2{
 .map{
     max-height: 120%;
     max-width: 50%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.LocationP{
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .contactInfoDiv{
     display: flex;
     flex-direction: column;
     min-height: 50%;
+    max-width: 40%;
 }
 
 .contactInfo{
@@ -249,7 +264,6 @@ h2{
     background-color: black;
     height: 50px;
     width: 100vw;
-    border-top: 4px solid rgb(200, 175, 31);
 }
 
 .footerP{
