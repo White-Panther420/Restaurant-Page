@@ -2,6 +2,7 @@ import { createAnElement, createAnImg } from "./homePage"
 import "./Styles/AboutUsPage.css"
 import ExcellenceImg from "./Assets/Excellence.jpg"
 import Steak from './Assets/Steak.jpeg'
+import Service from "./Assets/Service.jpg"
 const loadAboutUsPage = ()=>{
     const aboutContent = createAnElement("div", "aboutContent")
 
@@ -56,14 +57,37 @@ const loadAboutUsPage = ()=>{
     savoryContentTextDiv.appendChild(savoryContentP)
     savoryContentTextDiv.appendChild(savoryContentP2)
     savoryContentTextDiv.appendChild(savoryContentP3)
-
     const savoryContentImg = createAnImg(Steak, "excellenceContentImg")
     savoryContentImgDiv.appendChild(savoryContentImg)
 
+    //Section 4: Impeccable Service message
+    const serviceContentDiv = createAnElement("div", "serviceContentDiv")
+    const serviceImgDiv = createAnElement("div", "serviceImgDiv")
+    serviceContentDiv.appendChild(serviceImgDiv)
+    const serviceImg = createAnImg(Service, "serviceImg")
+    serviceContentDiv.appendChild(serviceImg)
+    const outterServiceTextContentDiv = createAnElement("div", "outterServiceTextContentDiv")
+    serviceContentDiv.appendChild(outterServiceTextContentDiv)
+    const serviceTextContentDiv = createAnElement("div", "serviceTextContentDiv")
+    outterServiceTextContentDiv.appendChild(serviceTextContentDiv)
+
+    const serviceTextHeader = createAnElement('h2', "serviceTextHeader")
+    serviceTextHeader.textContent = "IMPECCABLE SERVICE"
+    serviceTextContentDiv.appendChild(serviceTextHeader)
+    const serviceTextP = createAnElement("p", "serviceTextP")
+    serviceTextP.textContent = "At Haddison Steakhouse, we believe that impeccable service is the cornerstone of a truly exceptional dining experience. Our highly trained and knowledgeable staff are dedicated to anticipating your every need, providing attentive service that is both professional and personable. From the moment you arrive to the moment you leave, our team is committed to ensuring that your visit is seamless, memorable, and exceeds your expectations."
+    serviceTextContentDiv.appendChild(serviceTextP)
+    const customerReviewP = createAnElement("p", "customerReviewP")
+    customerReviewP.textContent = "\"I recently had the pleasure of dining at Haddison Steakhouse, and I cannot praise it enough. From the moment I walked in, I was greeted with warmth and hospitality. The service was exceptional, with the staff going above and beyond to ensure that every aspect of my dining experience was perfect.\""
+    serviceTextContentDiv.appendChild(customerReviewP)
+    const customerName = createAnElement("div", "customerName")
+    customerName.textContent = "-John Doe"
+    serviceTextContentDiv.appendChild(customerName)
 
     aboutContent.appendChild(missionStmtDiv)
     aboutContent.appendChild(excellenceContentDiv)
     aboutContent.appendChild(savoryContentDiv)
+    aboutContent.appendChild(serviceContentDiv)
     return aboutContent
 }
 
