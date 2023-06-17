@@ -1,10 +1,6 @@
-import './Styles/style.css'
+import './Styles/HomePage.css'
 import Icon from './Assets/Restaurant.png'
 import Steak from './Assets/Steak.jpeg'
-import LocationMap from './Assets/Map.png'
-import FaceBookIcon from "./Assets/Facebook.png"
-import InstagramIcon from "./Assets/Instagram.png"
-import YelpIcon from "./Assets/Yelp.png"
 const loadHomePage = () =>{
     //Stuff below nav bar
     const pageBodyContent = createAnElement("div", "pageBodyContent")
@@ -46,70 +42,7 @@ const loadHomePage = () =>{
     hoursInfoDiv.appendChild(sunHoursInfo)
 
     imgAndInfoDiv.appendChild(steakImg)
-
-    const actionLocationContactDiv = createAnElement("div", "actionLocationContactDiv")
-    const actionStmtDiv = createAnElement("div", "actionStmtDiv")
-    actionLocationContactDiv.appendChild(actionStmtDiv)
-    const actionStmtP = createAnElement("h2", "actionStmtP")
-    actionStmtP.textContent = "Savor perfection at Haddison Steakhouse - reserve your table today!"
-    actionStmtDiv.appendChild(actionStmtP)
-
-    const locationAndContactDiv = createAnElement("div", "locationAndContactDiv")
-    const locationInfoDiv = createAnElement("div", "locationInfoDiv")
-    locationAndContactDiv.appendChild(locationInfoDiv)
-    actionLocationContactDiv.appendChild(locationAndContactDiv)
-
-    const locationHeaderDiv = createAnElement("div", "locationHeaderDiv")
-    const locationHeader = createAnElement("h2", "locationHeader")
-    locationHeader.textContent = "Our Location"
-    locationHeaderDiv.appendChild(locationHeader)
-    const locationMapDiv = createAnElement("div", "mapDiv")
-    const locationMap = createAnImg(LocationMap, "map")
-    locationMapDiv.appendChild(locationMap)
-    const locationPDiv = createAnElement("div", "locationPDiv")
-    const locationP1 = createAnElement("p", "LocationP")
-    locationP1.textContent = "5101 N 44th St."
-    const locationP2 = createAnElement("p", "LocationP")
-    locationP2.textContent = "Phoenix, AZ 85018"
-    locationPDiv.appendChild(locationP1)
-    locationPDiv.appendChild(locationP2)
-
-    locationInfoDiv.appendChild(locationHeaderDiv)
-    locationInfoDiv.appendChild(locationMapDiv)
-    locationInfoDiv.appendChild(locationPDiv)
-
-    const contactInfoDiv = createAnElement("div", "contactInfoDiv")
-    locationAndContactDiv.appendChild(contactInfoDiv)
-    const contactInfoHeader = createAnElement("h2", "contactInfoHeader")
-    contactInfoHeader.textContent = "Contact Us"
-    const contactPhoneNumber = createAnElement("p", "contactInfo")
-    contactPhoneNumber.textContent = "Call 555-555-5555 to make a reservation"
-    const contactEmail = createAnElement("p", "contactInfo")
-    contactEmail.textContent = "Or email us at Haddison.Stk@gmail.com"
-
-    const socialIconsDiv = createAnElement("div", "socialIconsDiv")
-    const faceBookIcon = createAnImg(FaceBookIcon, "socialIcon")
-    const instagramIcon = createAnImg(InstagramIcon, "socialIcon")
-    const yelpIcon = createAnImg(YelpIcon, "socialIcon")
-    socialIconsDiv.appendChild(faceBookIcon)
-    socialIconsDiv.appendChild(instagramIcon)
-    socialIconsDiv.appendChild(yelpIcon)
-
-    contactInfoDiv.appendChild(contactInfoHeader)
-    contactInfoDiv.appendChild(contactPhoneNumber)
-    contactInfoDiv.appendChild(contactEmail)    
-    contactInfoDiv.appendChild(socialIconsDiv)
-        
-    const footer = createAnElement("footer", "footer")
-    const footerP = createAnElement("p", "footerP")
-    footerP.textContent = "Copyright @ 2023 The Odin Project"
-    footer.appendChild(footerP)
-    
     pageBodyContent.appendChild(imgAndInfoDiv)
-    pageBodyContent.appendChild(actionLocationContactDiv)
-    pageBodyContent.appendChild(footer)
-
-    //pageBodyContent.appendChild(pageBodyContent)
     return pageBodyContent
 }
 
@@ -138,5 +71,6 @@ const createAnImg = (importedImage, className) =>{
 export{
     loadHomePage,
     createAnElement,
-    createButtons
+    createButtons,
+    createAnImg
 }
