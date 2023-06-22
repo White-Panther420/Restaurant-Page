@@ -1,5 +1,6 @@
 import { loadHomePage, createAnElement, createButtons, createAnImg } from "./homePage.js"
 import { loadAboutUsPage } from "./aboutPage.js"
+import { loadMenuPage } from "./menuPage.js"
 import LocationMap from './Assets/Map.png'
 import FaceBookIcon from "./Assets/Facebook.png"
 import InstagramIcon from "./Assets/Instagram.png"
@@ -35,18 +36,22 @@ navButtons.forEach(btn => {
     btn.addEventListener("click", () =>{
         switch(btn.textContent.toUpperCase()){
             case "HOME":
-                content.removeChild(pageBodyContent)
-                pageBodyContent = loadHomePage()
-                content.insertBefore(pageBodyContent, actionLocationContactDiv)
+                navButtons.forEach(btn =>{
+                    btn.classList.remove("clickedBtn")
+                })
+                changePage(loadHomePage, btn)
                 break;
             case "ABOUT":
-                content.removeChild(pageBodyContent)
-                pageBodyContent = loadAboutUsPage()
-                content.insertBefore(pageBodyContent, actionLocationContactDiv)
-                console.log("HELLOO")
+                navButtons.forEach(btn =>{
+                    btn.classList.remove("clickedBtn")
+                })
+                changePage(loadAboutUsPage, btn)
                 break;
             case "MENU":
-                console.log("YUMMY")
+                navButtons.forEach(btn =>{
+                    btn.classList.remove("clickedBtn")
+                })
+                changePage(loadMenuPage, btn)
                 break;
             case "LOCATION":
                 console.log("HHHIIII")
@@ -125,7 +130,13 @@ footer.appendChild(footerP)
 content.appendChild(actionLocationContactDiv)
 content.appendChild(footer)
 
-
+const changePage = (functionName, btn) => {
+    btn.classList.add("clickedBtn")
+    content.removeChild(pageBodyContent)
+    pageBodyContent = functionName()
+    content.insertBefore(pageBodyContent, actionLocationContactDiv)
+    window.scrollTo(0, 0);
+}
 
 
 

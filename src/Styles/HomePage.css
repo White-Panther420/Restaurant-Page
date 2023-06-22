@@ -80,6 +80,10 @@ h2{
     color: rgb(200, 175, 31);
 }
 
+.clickedBtn{
+    color: rgb(200, 175, 31);
+}
+
 .restaurantTitle{
     color: white;
     font-size: max(3.4rem, 3.5rem);

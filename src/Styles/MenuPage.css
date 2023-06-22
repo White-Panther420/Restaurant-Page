@@ -1,0 +1,114 @@
+@font-face {
+    font-family: cursiveFont;
+    src: url('../Assets/alsscrp.ttf');
+}
+
+html{
+    height: 100%;
+    margin: 0;
+    top: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-family: sans-serif;
+}
+
+.menuContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    max-height: 80%;
+    margin-top: 75px;
+    padding-bottom: 4%;
+    background-color: black;
+}
+
+.menuTitle{
+    border-bottom: 1px solid rgb(200, 175, 31);
+    font-size: 32px;
+    max-width: 10%;
+}
+
+.menuDiv{
+    display: grid;
+    grid-template-rows: repeat(16, 150px);
+    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+    background-color: rgb(0, 0, 0);
+    border: 12px solid gray;
+    padding: 3% 5%;
+    max-width: 70vw;
+    column-gap: 75px;
+}
+
+.appetizerSection{
+    grid-row: 1/5;
+    grid-column: 1/2;
+}
+
+.saladSoupSection{
+    grid-row: 5/10;
+    grid-column: 1/2;
+}
+
+.appetizerSection,
+.saladSoupSection,
+.entreeSection,
+.drinksSection,
+.desertSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    max-width: 1fr;
+}
+
+.MenuSectionHeader{
+    font-size: 28px;
+    width: 100%;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 6px;
+    border-bottom: 2px solid white;
+}
+
+.itemDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+    min-height: 125px;
+    min-width: 1fr;
+}   
+
+.itemNameAndPrice{
+    font-weight: 1000;
+}
+
+.itemDescr{
+    margin-top: -5px;
+    margin-bottom: 0;
+}
+
+.drinksSection{
+    grid-row: 1/6;
+    grid-column: 3/4;
+}
+
+.entreeSection{
+    grid-row: 1/11;
+    grid-column: 2/3;
+}
+
+.desertSection{
+    grid-row: 6/10;
+    grid-column: 3/4;
+    margin-top: -55px
+}
