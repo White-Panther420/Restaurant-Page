@@ -134,15 +134,54 @@ const loadMenuPage = () =>{
         desertSection.appendChild(createMenuItems(dessertNames[i], dessertDescriptions[i]))
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    const sidesSection = createAnElement("div", "sidesSection")
+    menuDiv.appendChild(sidesSection)
+    const sidesHeader = createAnElement("p", "MenuSectionHeader")
+    sidesHeader.classList.add("sidesHeader")
+    sidesHeader.textContent = "SIDES MATTER"
+    sidesSection.appendChild(sidesHeader)
+    // Item names
+    const itemNames = [
+    "Truffle Mashed Potatoes",
+    "Grilled Asparagus",
+    "Creamed Spinach",
+    "Roasted Brussels Sprouts",
+    "Wild Mushroom Risotto",
+    "Loaded Baked Potato",
+    "Crispy Onion Rings",
+    "Fresh Garden Salad",
+    "Garlic Parmesan Fries"
+    ];
+
+    // Item prices
+    const itemPrices = [
+    "$20",
+    "$19",
+    "$18",
+    "$17",
+    "$21",
+    "$17",
+    "$16",
+    "$16",
+    "$16"
+    ];
+
+    // Item descriptions
+    const itemDescriptions = [
+    "Creamy mashed potatoes infused with aromatic truffle oil.",
+    "Tender asparagus spears grilled to perfection.",
+    "Fresh spinach cooked in a rich, creamy sauce.",
+    "Crispy Brussels sprouts roasted with a hint of sweetness.",
+    "Creamy risotto cooked with a variety of wild mushrooms.",
+    "A classic baked potato topped with cheese, bacon, and sour cream.",
+    "Crispy, golden onion rings served with a zesty dipping sauce.",
+    "A refreshing salad with mixed greens and seasonal vegetables.",
+    "Golden fries tossed with garlic and sprinkled with Parmesan cheese."
+    ];
+    for(let i=0; i<itemNames.length; i++){
+        sidesSection.appendChild(createSides(itemNames[i], itemDescriptions[i], itemPrices[i]))
+    }
+
     menuContent.appendChild(menuTitle)
     menuContent.appendChild(menuDiv)
     return menuContent
@@ -156,6 +195,20 @@ const createMenuItems = (itemName, itemDescription) =>{
     itemDescr.textContent = itemDescription
     itemDiv.appendChild(itemNameAndPrice)
     itemDiv.appendChild(itemDescr)
+    return itemDiv
+}
+
+const createSides = (itemName, itemDescription, itemPrice) =>{
+    const itemDiv = createAnElement("div", "sideDiv")
+    const sideName = createAnElement("p", "sideName")
+    sideName.textContent = itemName
+    const itemDescr = createAnElement("p", "sideDescr")
+    itemDescr.textContent = itemDescription
+    const sidePrice = createAnElement("p", "sidePrice")
+    sidePrice.textContent = itemPrice
+    itemDiv.appendChild(sideName)
+    itemDiv.appendChild(itemDescr)
+    itemDiv.appendChild(sidePrice)
     return itemDiv
 }
 

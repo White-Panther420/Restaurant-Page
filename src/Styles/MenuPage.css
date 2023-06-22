@@ -28,7 +28,7 @@ body{
     max-height: 80%;
     margin-top: 75px;
     padding-bottom: 4%;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
 }
 
 .menuTitle{
@@ -39,12 +39,12 @@ body{
 
 .menuDiv{
     display: grid;
-    grid-template-rows: repeat(16, 150px);
-    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+    grid-template-rows: repeat(auto-fill, 1fr);
     background-color: rgb(0, 0, 0);
     border: 12px solid gray;
     padding: 3% 5%;
-    max-width: 70vw;
+    max-width: 70%;
     column-gap: 75px;
 }
 
@@ -54,7 +54,7 @@ body{
 }
 
 .saladSoupSection{
-    grid-row: 5/10;
+    grid-row: 5/11;
     grid-column: 1/2;
 }
 
@@ -62,7 +62,8 @@ body{
 .saladSoupSection,
 .entreeSection,
 .drinksSection,
-.desertSection{
+.desertSection,
+.sidesSection{
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -88,18 +89,15 @@ body{
     min-width: 1fr;
 }   
 
-.itemNameAndPrice{
+.itemNameAndPrice,
+.sideName{
     font-weight: 1000;
 }
 
-.itemDescr{
+.itemDescr,
+.sideDescr{
     margin-top: -5px;
     margin-bottom: 0;
-}
-
-.drinksSection{
-    grid-row: 1/6;
-    grid-column: 3/4;
 }
 
 .entreeSection{
@@ -107,8 +105,52 @@ body{
     grid-column: 2/3;
 }
 
-.desertSection{
-    grid-row: 6/10;
+.drinksSection{
+    grid-row: 1/6;
     grid-column: 3/4;
-    margin-top: -55px
+}
+
+.desertSection{
+    grid-row: 6/11;
+    grid-column: 3/4;
+}
+
+.sidesSection{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.2fr repeat(3, 1fr);
+    max-width: 100%;
+    grid-column: 1/-1;
+    grid-row: 11/13;
+    text-align: center;
+    align-items: center;
+    border: 2px solid white;
+    padding: 16px;
+    margin-top: 12px;
+}
+
+.sidesHeader{
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    margin: 0;
+    border: none;
+}
+
+.sideDiv{
+    height: 100px;
+    min-width: 1fr;
+    padding: 0;
+}
+
+.sideDescr{
+    margin-top: -10px;
+}
+
+.sidePrice{
+    margin-top: 0px;
+}
+
+.sidePrice{
+    color: white;
+    font-size: 18px;
 }

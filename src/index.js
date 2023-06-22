@@ -54,13 +54,28 @@ navButtons.forEach(btn => {
                 changePage(loadMenuPage, btn)
                 break;
             case "LOCATION":
-                console.log("HHHIIII")
+                navButtons.forEach(btn =>{
+                    btn.classList.remove("clickedBtn")
+                })
+                btn.classList.add("clickedBtn")
+                changePage(loadHomePage, btn)
+                window.scrollTo(0,1200)
                 break;
             case "HOURS":
-                console.log("UWU")
+                navButtons.forEach(btn =>{
+                    btn.classList.remove("clickedBtn")
+                })
+                btn.classList.add("clickedBtn")
+                changePage(loadHomePage, btn)
+                window.scrollTo(0,900)
                 break;
             case "CONTACT":
-                console.log("YIKES")
+                navButtons.forEach(btn =>{
+                    btn.classList.remove("clickedBtn")
+                })
+                btn.classList.add("clickedBtn")
+                changePage(loadHomePage, btn)
+                window.scrollTo(0,1200)
                 break;
             default:
                 break;
