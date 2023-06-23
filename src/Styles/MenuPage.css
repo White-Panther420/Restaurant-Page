@@ -1,0 +1,156 @@
+@font-face {
+    font-family: cursiveFont;
+    src: url('../Assets/alsscrp.ttf');
+}
+
+html{
+    height: 100%;
+    margin: 0;
+    top: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-family: sans-serif;
+}
+
+.menuContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    max-height: 80%;
+    margin-top: 75px;
+    padding-bottom: 4%;
+    background-color: rgb(0, 0, 0);
+}
+
+.menuTitle{
+    border-bottom: 1px solid rgb(200, 175, 31);
+    font-size: 32px;
+    max-width: 10%;
+}
+
+.menuDiv{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+    grid-template-rows: repeat(auto-fill, 1fr);
+    background-color: rgb(0, 0, 0);
+    border: 12px solid gray;
+    padding: 3% 5%;
+    max-width: 70%;
+    column-gap: 75px;
+}
+
+.appetizerSection{
+    grid-row: 1/5;
+    grid-column: 1/2;
+}
+
+.saladSoupSection{
+    grid-row: 5/11;
+    grid-column: 1/2;
+}
+
+.appetizerSection,
+.saladSoupSection,
+.entreeSection,
+.drinksSection,
+.desertSection,
+.sidesSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    max-width: 1fr;
+}
+
+.MenuSectionHeader{
+    font-size: 28px;
+    width: 100%;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 6px;
+    border-bottom: 2px solid white;
+}
+
+.itemDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+    min-height: 125px;
+    min-width: 1fr;
+}   
+
+.itemNameAndPrice,
+.sideName{
+    font-weight: 1000;
+}
+
+.itemDescr,
+.sideDescr{
+    margin-top: -5px;
+    margin-bottom: 0;
+}
+
+.entreeSection{
+    grid-row: 1/11;
+    grid-column: 2/3;
+}
+
+.drinksSection{
+    grid-row: 1/6;
+    grid-column: 3/4;
+}
+
+.desertSection{
+    grid-row: 6/11;
+    grid-column: 3/4;
+}
+
+.sidesSection{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.2fr repeat(3, 1fr);
+    max-width: 100%;
+    grid-column: 1/-1;
+    grid-row: 11/13;
+    text-align: center;
+    align-items: center;
+    border: 2px solid white;
+    padding: 16px;
+    margin-top: 12px;
+}
+
+.sidesHeader{
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    margin: 0;
+    border: none;
+}
+
+.sideDiv{
+    height: 100px;
+    min-width: 1fr;
+    padding: 0;
+}
+
+.sideDescr{
+    margin-top: -10px;
+}
+
+.sidePrice{
+    margin-top: 0px;
+}
+
+.sidePrice{
+    color: white;
+    font-size: 18px;
+}
